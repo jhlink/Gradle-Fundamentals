@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.oliverh.javajokes.JavaSmith;
+import com.example.oliverh.jokewizard.JokeWizard;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -24,6 +25,11 @@ public class MainActivityFragment extends Fragment {
         TextView textView = (TextView) rootView.findViewById(R.id.text_view);
         JavaSmith myJoker = new JavaSmith();
         textView.setText(myJoker.getJoke());
+
+        TextView manifique = (TextView) rootView.findViewById(R.id.text_view_magnifique);
+        JokeWizard manifiqueJoke = new JokeWizard();
+        textView.setText(manifiqueJoke.getJoke());
+
         return rootView;
     }
 }
