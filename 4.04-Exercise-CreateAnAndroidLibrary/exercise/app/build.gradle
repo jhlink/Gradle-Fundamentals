@@ -28,4 +28,5 @@ dependencies {
 
     implementation project(':javaJokes')
     implementation project(':JokeWizard')
+    implementation project(':jokedisplay')
 }

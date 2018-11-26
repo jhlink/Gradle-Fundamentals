@@ -1,9 +1,14 @@
 package com.example.oliverh.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.example.oliverh.javajokes.JavaSmith;
+import com.example.oliverh.jokedisplay.NewJokeActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,10 +35,23 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+
+
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void jokeBtn (View view) {
+        JavaSmith myJoker = new JavaSmith();
+
+        String joke = myJoker.getJoke();
+
+        Intent intent = new Intent(this, NewJokeActivity.class);
+        intent.putExtra("JOKE_TEXT", joke);
+
+        startActivity(intent);
     }
 }
 
